@@ -1,4 +1,4 @@
-(function ($) {
+(function($) {
     'use strict';
 
     var roberto_window = $(window);
@@ -7,8 +7,8 @@
     // :: 1.0 Preloader Active Code
     // ****************************
 
-    roberto_window.on('load', function () {
-        $('#preloader').fadeOut('1000', function () {
+    roberto_window.on('load', function() {
+        $('#preloader').fadeOut('1000', function() {
             $(this).remove();
         });
     });
@@ -25,7 +25,7 @@
     // :: 3.0 Single Project Slide
     // ***************************
 
-    $(".single-project-slide").on("mouseenter", function () {
+    $(".single-project-slide").on("mouseenter", function() {
         $(".single-project-slide").removeClass("active");
         $(this).addClass("active");
     });
@@ -44,27 +44,27 @@
             nav: true
         })
 
-        welcomeSlider.on('translate.owl.carousel', function () {
+        welcomeSlider.on('translate.owl.carousel', function() {
             var layer = $("[data-animation]");
-            layer.each(function () {
+            layer.each(function() {
                 var anim_name = $(this).data('animation');
                 $(this).removeClass('animated ' + anim_name).css('opacity', '0');
             });
         });
 
-        $("[data-delay]").each(function () {
+        $("[data-delay]").each(function() {
             var anim_del = $(this).data('delay');
             $(this).css('animation-delay', anim_del);
         });
 
-        $("[data-duration]").each(function () {
+        $("[data-duration]").each(function() {
             var anim_dur = $(this).data('duration');
             $(this).css('animation-duration', anim_dur);
         });
 
-        welcomeSlider.on('translated.owl.carousel', function () {
+        welcomeSlider.on('translated.owl.carousel', function() {
             var layer = welcomeSlider.find('.owl-item.active').find("[data-animation]");
-            layer.each(function () {
+            layer.each(function() {
                 var anim_name = $(this).data('animation');
                 $(this).addClass('animated ' + anim_name).css('opacity', '1');
             });
@@ -87,7 +87,7 @@
 
         welcomeSlide();
 
-        welcomeSlider.on('translated.owl.carousel', function () {
+        welcomeSlider.on('translated.owl.carousel', function() {
             welcomeSlide();
         });
     }
@@ -157,30 +157,30 @@
             autoplay: true,
             smartSpeed: 1500,
             nav: true,
-            navText: [('<i class="fa fa-long-arrow-left" aria-hidden="true"></i> Previous'), ('Next <i class="fa fa-long-arrow-right" aria-hidden="true"></i>')]
+            navText: [('<i class="fa fa-long-arrow-left" aria-hidden="true"></i> Anterior'), ('Siguiente <i class="fa fa-long-arrow-right" aria-hidden="true"></i>')]
         });
 
-        roomSlides.on('translate.owl.carousel', function () {
+        roomSlides.on('translate.owl.carousel', function() {
             var layer = $("[data-animation]");
-            layer.each(function () {
+            layer.each(function() {
                 var anim_name = $(this).data('animation');
                 $(this).removeClass('animated ' + anim_name).css('opacity', '0');
             });
         });
 
-        $("[data-delay]").each(function () {
+        $("[data-delay]").each(function() {
             var anim_del = $(this).data('delay');
             $(this).css('animation-delay', anim_del);
         });
 
-        $("[data-duration]").each(function () {
+        $("[data-duration]").each(function() {
             var anim_dur = $(this).data('duration');
             $(this).css('animation-duration', anim_dur);
         });
 
-        roomSlides.on('translated.owl.carousel', function () {
+        roomSlides.on('translated.owl.carousel', function() {
             var layer = roomSlides.find('.owl-item.active').find("[data-animation]");
-            layer.each(function () {
+            layer.each(function() {
                 var anim_name = $(this).data('animation');
                 $(this).addClass('animated ' + anim_name).css('opacity', '1');
             });
@@ -190,7 +190,7 @@
     // ********************************
     // :: 8.0 Search Button Active Code
     // ********************************
-    $('.search-btn').on('click', function () {
+    $('.search-btn').on('click', function() {
         $('.search-form').toggleClass('search-form-active');
     })
 
@@ -249,7 +249,7 @@
     // *********************************
     // :: 15.0 Prevent Default 'a' Click
     // *********************************
-    $('a[href="#"]').on('click', function ($) {
+    $('a[href="#"]').on('click', function($) {
         $.preventDefault();
     });
 
@@ -257,7 +257,7 @@
     // :: 16.0 Countdown Active Code
     // *****************************
     if ($.fn.countdown) {
-        $("#clock").countdown("2021/10/10", function (event) {
+        $("#clock").countdown("2021/10/10", function(event) {
             $(this).html(event.strftime("<div>%D <span>Days</span></div> <div>%H <span>Hours</span></div> <div>%M <span>Mins</span></div> <div>%S <span>Sec</span></div>"));
         });
     }
@@ -286,7 +286,7 @@
     // ********************************
     // :: 19.0 Range Slider Active Code
     // ********************************
-    $('.slider-range-price').each(function () {
+    $('.slider-range-price').each(function() {
         var min = jQuery(this).data('min');
         var max = jQuery(this).data('max');
         var unit = jQuery(this).data('unit');
@@ -299,7 +299,7 @@
             min: min,
             max: max,
             values: [value_min, value_max],
-            slide: function (event, ui) {
+            slide: function(event, ui) {
                 var result = label_result + " " + unit + ui.values[0] + ' - ' + unit + ui.values[1];
                 console.log(t);
                 t.closest('.slider-range').find('.range-price').html(result);
