@@ -168,6 +168,18 @@ ul li {
     line-height: 30px;
 }
 
+.logoimg11 {
+    color: #0079c2;
+    margin-top: 40px;
+}
+
+@media only screen and (max-width:1200px) {
+    .logimg11 {
+        max-width: 122px;
+        margin-top: 23px;
+    }
+}
+
 button.mfp-close,
 button.mfp-arrow {
     background: #0079c2;
